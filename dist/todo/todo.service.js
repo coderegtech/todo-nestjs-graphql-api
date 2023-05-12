@@ -18,13 +18,12 @@ let TodoService = class TodoService {
     }
     async create(createTodoInput) {
         try {
-            await this.prisma.todo.create({
+            return await this.prisma.todo.create({
                 data: {
                     todoText: createTodoInput.todoText,
                     completed: createTodoInput.completed
                 }
             });
-            return this.findAll();
         }
         catch (e) {
             throw new common_1.BadRequestException(e.message);

@@ -10,15 +10,12 @@ export class TodoService {
   async create(createTodoInput: CreateTodoInput) {
     try {
 
-      await this.prisma.todo.create({
+      return await this.prisma.todo.create({
         data: {
           todoText: createTodoInput.todoText,
           completed: createTodoInput.completed
         }
       })
-
-      return this.findAll()
-
 
     } catch (e) {
       throw new BadRequestException(e.message)
