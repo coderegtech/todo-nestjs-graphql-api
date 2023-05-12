@@ -7,16 +7,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
+const apollo_1 = require("@nestjs/apollo");
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
+const graphql_1 = require("@nestjs/graphql");
+const path_1 = require("path");
+const prisma_service_1 = require("./prisma/prisma.service");
+const todo_module_1 = require("./todo/todo.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        imports: [todo_module_1.TodoModule,
+            graphql_1.GraphQLModule.forRoot({
+                driver: apollo_1.ApolloDriver,
+                autoSchemaFile: (0, path_1.join)(process.cwd(), 'src/schema.gql'),
+                sortSchema: true
+            }),
+        ],
+        controllers: [],
+        providers: [prisma_service_1.PrismaService],
     })
 ], AppModule);
 exports.AppModule = AppModule;
