@@ -69,6 +69,7 @@ To create a todo, use the following query:
 
 mutation addTodo($input: CreateTodoInput!) {
   createTodo(createTodoInput: $input) {
+    id,
     todoText,
     completed
   }
@@ -81,6 +82,7 @@ To get all todo, use the following query:
 
 query fetchTodos {
   todos {
+    id,
     todoText,
    	completed,
     createdAt
@@ -105,6 +107,7 @@ To update a todo, use the following query:
 
 mutation updateTodoCompleted($input : UpdateTodoInput!){
   updateTodo(updateTodoInput: $input) {
+    id,
     todoText,
     completed
   }
