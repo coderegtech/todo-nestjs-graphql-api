@@ -4,7 +4,7 @@ import { Field, ObjectType } from '@nestjs/graphql';
 export class Todo {
 
   @Field()
-  _id: string;
+  id: string;
 
   @Field()
   todoText: string
@@ -14,5 +14,8 @@ export class Todo {
 
   @Field()
   createdAt: Date
+
+  @Field()
+  updatedAt: Date
 
 }
