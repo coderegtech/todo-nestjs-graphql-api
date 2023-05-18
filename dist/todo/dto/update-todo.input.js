@@ -17,7 +17,7 @@ let UpdateTodoInput = class UpdateTodoInput extends (0, graphql_1.PartialType)(c
 __decorate([
     (0, graphql_1.Field)(),
     __metadata("design:type", String)
-], UpdateTodoInput.prototype, "_id", void 0);
+], UpdateTodoInput.prototype, "id", void 0);
 __decorate([
     (0, graphql_1.Field)(),
     __metadata("design:type", Boolean)

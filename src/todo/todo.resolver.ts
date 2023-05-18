@@ -20,7 +20,7 @@ export class TodoResolver {
 
   @Mutation(() => Todo)
   updateTodo(@Args('updateTodoInput') updateTodoInput: UpdateTodoInput) {
-    return this.todoService.update(updateTodoInput._id, updateTodoInput);
+    return this.todoService.update(updateTodoInput.id, updateTodoInput);
   }
 
   @Mutation(() => Todo)

@@ -1,4 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
+import { Todo } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateTodoInput } from './dto/create-todo.input';
 import { UpdateTodoInput } from './dto/update-todo.input';
@@ -23,7 +24,7 @@ export class TodoService {
 
   }
 
-  async findAll() {
+  async findAll(): Promise<Todo[]> {
     try {
       return this.prisma.todo.findMany()
     } catch (e) {
@@ -45,8 +46,8 @@ export class TodoService {
   async remove(id: string) {
 
     try {
-      return await this.prisma.todo.delete({ where: { id } })
 
+      return await this.prisma.todo.delete({ where: { id } })
 
     } catch (e) {
       throw new BadRequestException(e.message)

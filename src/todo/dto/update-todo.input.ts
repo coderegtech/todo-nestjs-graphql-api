@@ -4,7 +4,7 @@ import { CreateTodoInput } from './create-todo.input';
 @InputType()
 export class UpdateTodoInput extends PartialType(CreateTodoInput) {
   @Field()
-  _id: string
+  id: string
 
   @Field()
   completed: boolean

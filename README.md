@@ -64,35 +64,42 @@ Using the App
 The app is accessible at localhost:3000/graphql. You can create, update, and delete todos using the GraphQL API.
 
 ## Creating a Todo
+
 ```
 To create a todo, use the following query:
 
 mutation addTodo($input: CreateTodoInput!) {
   createTodo(createTodoInput: $input) {
+    id,
     todoText,
     completed
   }
-} 
+}
 ```
 
 ## Get all Todos
+
 ```
 To get all todo, use the following query:
 
 query fetchTodos {
   todos {
+    id,
     todoText,
    	completed,
     createdAt
   }
-} 
+}
 ```
+
 ## Remove Todo
+
 ```
 To delete a todo, use the following query:
 
 mutation deleteTodo($input : String!){
   removeTodo(id: $input) {
+    id,
     completed,
     createdAt
   }
@@ -100,11 +107,13 @@ mutation deleteTodo($input : String!){
 ```
 
 ## Update Todo
+
 ```
 To update a todo, use the following query:
 
 mutation updateTodoCompleted($input : UpdateTodoInput!){
   updateTodo(updateTodoInput: $input) {
+    id,
     todoText,
     completed
   }
@@ -124,6 +133,3 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
-
-
-

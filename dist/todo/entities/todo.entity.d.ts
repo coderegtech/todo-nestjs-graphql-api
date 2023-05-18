@@ -1,6 +1,7 @@
 export declare class Todo {
-    _id: string;
+    id: string;
     todoText: string;
     completed: boolean;
     createdAt: Date;
+    updatedAt: Date;
 }

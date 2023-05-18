@@ -16,7 +16,7 @@ let Todo = class Todo {
 __decorate([
     (0, graphql_1.Field)(),
     __metadata("design:type", String)
-], Todo.prototype, "_id", void 0);
+], Todo.prototype, "id", void 0);
 __decorate([
     (0, graphql_1.Field)(),
     __metadata("design:type", String)
@@ -29,6 +29,10 @@ __decorate([
     (0, graphql_1.Field)(),
     __metadata("design:type", Date)
 ], Todo.prototype, "createdAt", void 0);
+__decorate([
+    (0, graphql_1.Field)(),
+    __metadata("design:type", Date)
+], Todo.prototype, "updatedAt", void 0);
 Todo = __decorate([
     (0, graphql_1.ObjectType)()
 ], Todo);

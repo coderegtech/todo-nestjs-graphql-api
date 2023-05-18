@@ -29,7 +29,7 @@ let TodoResolver = class TodoResolver {
         return this.todoService.findAll();
     }
     updateTodo(updateTodoInput) {
-        return this.todoService.update(updateTodoInput._id, updateTodoInput);
+        return this.todoService.update(updateTodoInput.id, updateTodoInput);
     }
     removeTodo(id) {
         return this.todoService.remove(id);
