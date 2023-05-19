@@ -11,11 +11,7 @@ export class TodoService {
   async create(createTodoInput: CreateTodoInput) {
     try {
 
-<<<<<<< HEAD
       return await this.prisma.todo.create({
-=======
-       return await this.prisma.todo.create({
->>>>>>> fb9cba0524fd21d71c796f66ad9bd7ad25bd2657
         data: {
           todoText: createTodoInput.todoText,
           completed: createTodoInput.completed
